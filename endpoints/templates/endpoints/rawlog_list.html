@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Raw Log List</h1>
+  {% if rawlog_list %}
+  <ul>
+    {% for rawlog in rawlog_list %}
+      <li>
+        <a href="{{ rawlog.get_absolute_url }}">{{ rawlog.id }} | {{ rawlog.date_received }} | {{ rawlog.asset_id }}:</a>
+        {{ rawlog.log_data }}
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no raw logs.</p>
+  {% endif %}
+
+{% endblock %}

@@ -1,0 +1,18 @@
+{% extends "base_generic.html" %}
+
+{% block title %}
+<title>My Endpoints</title>
+{% endblock %}
+
+{% block content %}
+  <h1>Endpoints Home</h1>
+  <p>Welcome to LocalLibrary, a website developed by <em>Mozilla Developer Network</em>!</p>
+  <h2>Dynamic content</h2>
+  <p>The library has the following record counts:</p>
+
+
+
+{% endblock %}
+<!-- Add additional CSS in static file -->
+{% load static %}
+<link rel="stylesheet" href="{% static 'css/styles.css' %}">

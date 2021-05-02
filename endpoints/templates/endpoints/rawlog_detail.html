@@ -1,0 +1,10 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Raw Log: {{ rawlog.id }}</h1>
+
+  <p><strong>Log ID:</strong> {{ rawlog.id }}</p> <!-- author detail link not yet defined -->
+  <p><strong>Asset UUID:</strong> {{ rawlog.asset_id }}</p>
+  <p><strong>Date Received:</strong> {{ rawlog.date_received }}</p>
+  <p><strong>Data:</strong></p> <p>{{ rawlog.log_data }}</p>
+{% endblock %}

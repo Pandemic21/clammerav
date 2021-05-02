@@ -1,0 +1,20 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Asset: {{ asset.asset_id }}</h1>
+
+  <p><strong>UUID:</strong> {{ asset.asset_id }}</p> <!-- author detail link not yet defined -->
+  <p><strong>Hostname:</strong> {{ asset.hostname }}</p>
+  <p><strong>Date Joined:</strong> {{ asset.date_joined }}</p>
+  <p><strong>Last Heartbeat:</strong> {{ asset.last_heartbeat }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <h4>Logs</h4>
+
+    <ul>
+      {% for log in asset.rawlog_set.all %}
+          <li>{{ log.date_received}} - {{ log.log_data }}</li>
+      {% endfor %}
+    </ul>
+  </div>
+{% endblock %}

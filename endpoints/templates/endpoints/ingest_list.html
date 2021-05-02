@@ -1,0 +1,21 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Ingest List</h1>
+
+  <p>
+    <a href="{% url 'ingest-create' %}">Create</a> a new ingest.
+  </p>
+  {% if ingest_list %}
+  <ul>
+    {% for ingest in ingest_list %}
+      <li>
+        <a href="{{ ingest.get_absolute_url }}">{{ ingest.id }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no ingests.</p>
+  {% endif %}
+
+{% endblock %}

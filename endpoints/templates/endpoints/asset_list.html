@@ -1,0 +1,17 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Asset List</h1>
+  {% if asset_list %}
+  <ul>
+    {% for asset in asset_list %}
+      <li>
+        <a href="{{ asset.get_absolute_url }}">{{ asset.asset_id }}</a>
+      </li>
+    {% endfor %}
+  </ul>
+  {% else %}
+    <p>There are no assets.</p>
+  {% endif %}
+
+{% endblock %}

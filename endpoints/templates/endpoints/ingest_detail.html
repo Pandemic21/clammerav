@@ -1,0 +1,15 @@
+{% extends "base_generic.html" %}
+
+{% block content %}
+  <h1>Ingest: {{ ingest.id }}</h1>
+
+  <p><strong>UUID:</strong> {{ ingest.id }}</p> <!-- author detail link not yet defined -->
+  <p><strong>URL:</strong> <a href="{{ ingest.url }}">{{ ingest.url }}</a></p>
+  <p><strong>Command:</strong> <pre>wget {{ ingest.url }} -O install.sh; sudo bash ./install.sh</pre></p>
+  <p><strong>Date Created:</strong> {{ ingest.date_created }}</p>
+  <p><strong>Ingest Active:</strong> {{ ingest.active }}</p>
+
+  <div style="margin-left:20px;margin-top:20px">
+    <a href="{% url 'ingest-delete' ingest.id %}">Delete this Ingest</a>
+  </div>
+{% endblock %}
